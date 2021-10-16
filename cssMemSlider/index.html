@@ -10,9 +10,62 @@
 <body>
     <div class="slider-wrapper">
         <div class="slider-container">
-            
+            <div class="slider">
+                <div class="image run">
+                    <img src="assets/slide1.gif">
+                </div>
+                <div class="image">
+                    <img src="assets/slide2.gif">
+                </div>
+                <div class="image">
+                    <img src="assets/slide3.gif">
+                </div>
+                <div class="image">
+                    <img src="assets/slide4.gif">
+                </div>
+            </div>
+
+                 
+                <div class="slider-subtitle">
+                    <p class="slider_text run">How mentors are waiting for my work</p>
+                    <p class="slider_text">How am I in a hurry to complete it</p>
+                    <p class="slider_text">How do i did it</p>
+                    <p class="slider_text">Well, is that okay??</p>
+
+                </div>
+                <div class="bullets">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+
+                </div>
         </div>
     </div>
+    <script>
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("image");
+            let dots = document.getElementsByClassName("dot");
+            let text = document.getElementsByClassName("slider_text");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                text[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            text[slideIndex-1].style.display = "block";
+        }
+    </script>
     
 </body>
 </html>
