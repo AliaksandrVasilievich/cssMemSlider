@@ -3,12 +3,12 @@
     margin: 0;
     padding:0;
     scroll-behavior: smooth;
-    transform: 0.5s;
+    transition: 0.8s;
     background: #393838;
 }
 .slider-wrapper {
     margin: 90px auto;
-    max-width: 580px;
+    max-width: 617px;
 
 }
 .slider-container {
@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0 20px;
 }
 .slider {
     position: relative;
@@ -60,7 +61,11 @@
     z-index: -1;
   }
 .dot.active {
-    border: 1px solid white;
+    border: 2px solid rgb(80, 123, 253);
+    background-color: #393838;
+}
+.dot.active:hover {
+    border: 2px solid #fff;
     background-color: #393838;
 }
 .dot:hover {
@@ -81,4 +86,20 @@
 }
 .slider_text.run {
      display: block;
+}
+@media (max-width: 480px){
+    .slider-container {
+        display: grid;
+    }
+    .slider-wrapper {
+        margin: 50px auto;
+        max-width: 480px;
+    }
+    .bullets {
+        justify-content: center;
+    }
+    .slider-subtitle {
+        top: 80px;
+    }
+
 }
